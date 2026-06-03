@@ -1,49 +1,32 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchGraphQL } from "../services/graphql";
+import "./Header.css";
 
 function Header() {
-  const [pages, setPages] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost/Custom_Web/graphql", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: `
-        {
-          pages {
-            nodes {
-              title
-              slug
-            }
-          }
-        }
-        `,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setPages(data.data.pages.nodes);
-      });
-  }, []);
-
   return (
-    <nav>
-      <Link to="/">Home</Link>
+    <header className="header">
+      <div className="container">
 
-      {pages.map((page) => (
-        <Link
-          key={page.slug}
-          to={`/${page.slug}`}
-          style={{ marginLeft: "15px" }}
-        >
-          {page.title}
-        </Link>
-      ))}
-    </nav>
+        <div className="logo">
+          <Link to="/">Magnific</Link>
+        </div>
+
+        <nav className="nav-menu">
+          <Link to="/">Home</Link>
+          <Link to="/about-us">About</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
+
+        <div>
+          <Link to="/cart" className="cart-link">
+            <span className="cart-icon">Cart</span>
+            <span className="user">My Account</span>
+          </Link>
+        </div>
+
+
+      </div>
+    </header>
   );
 }
 
