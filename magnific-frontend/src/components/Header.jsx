@@ -1,29 +1,23 @@
 import { Link } from "react-router-dom";
-import "./Header.css";
 
 function Header() {
   return (
-    <header className="header">
-      <div className="container">
+    <header className="border-b">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <div className="logo">
-          <Link to="/">Magnific</Link>
-        </div>
+        <Link
+          to="/"
+          className="text-2xl font-bold"
+        >
+          Magnific
+        </Link>
 
-        <nav className="nav-menu">
+        <nav className="flex gap-8">
           <Link to="/">Home</Link>
           <Link to="/about-us">About</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-
-        <div>
-          <Link to="/cart" className="cart-link">
-            <span className="cart-icon">Cart</span>
-            <span className="user">My Account</span>
-          </Link>
-        </div>
-
 
       </div>
     </header>
