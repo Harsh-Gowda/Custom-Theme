@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="border-b">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto px-10 py-4 flex items-center justify-between bg-orange-300 rounded-full ">
 
         <Link
           to="/"
@@ -12,12 +12,21 @@ function Header() {
           Magnific
         </Link>
 
-        <nav className="flex gap-8">
+        <nav className="flex gap-6" text-sm>
           <Link to="/">Home</Link>
           <Link to="/about-us">About</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/contact">Contact</Link>
         </nav>
+
+      <Link to="/cart">
+       <div className="cart-link flex items-center gap-6">
+          <span className="text-sm">Cart</span>
+          <span className="text-sm">Account</span>
+        
+          
+        </div></Link>
+       
 
       </div>
     </header>
