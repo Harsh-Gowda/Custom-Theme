@@ -5,12 +5,7 @@ function Header() {
     <header className="border-b">
       <div className="max-w-4xl mx-auto px-10 py-4 flex items-center justify-between bg-orange-300 rounded-full ">
 
-        <Link
-          to="/"
-          className="text-2xl font-bold"
-        >
-          Magnific
-        </Link>
+
 
         <nav className="flex gap-6" text-sm>
           <Link to="/">Home</Link>
@@ -18,16 +13,22 @@ function Header() {
           <Link to="/shop">Shop</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-
-      <Link to="/cart">
-       <div className="cart-link flex items-center gap-6">
-          <span className="text-sm">Cart</span>
-          <span className="text-sm">Account</span>
-        
-          
-        </div></Link>
-       
-
+        <Link
+          to="/"
+          className="text-2xl font-bold"
+        >
+          Magnific
+        </Link>
+        <nav className="flex gap-6" text-sm>
+          <Link>
+            <div className="cart-link flex items-center gap-6">
+              <span className="text-sm">Cart</span>
+              <span className="text-sm">Account</span>
+              <Link to="/shop">Shop</Link>
+              <Link to="/contact">Contact</Link>
+            </div>
+          </Link>
+        </nav>
       </div>
     </header>
   );
