@@ -4,23 +4,30 @@ import "./Header.css";
 export default function Header() {
 
   const [showHeader, setShowHeader] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
 
     let lastScroll = 0;
 
-    const handleScroll = () => {
+   const handleScroll = () => {
 
-      const currentScroll = window.pageYOffset;
+  const currentScroll = window.pageYOffset;
 
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
+  if(currentScroll > 50){
+    setScrolled(true);
+  }else{
+    setScrolled(false);
+  }
 
-      lastScroll = currentScroll;
-    };
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    setShowHeader(false);
+  } else {
+    setShowHeader(true);
+  }
+
+  lastScroll = currentScroll;
+};
 
     window.addEventListener("scroll", handleScroll);
 
@@ -32,8 +39,11 @@ export default function Header() {
 
   return (
 
-    <header className={`header ${showHeader ? "show" : "hide"}`}>
-
+<header
+  className={`header
+  ${showHeader ? "show" : "hide"}
+  ${scrolled ? "scrolled" : ""}`}
+>
       <div className="header-container">
 
         <div className="header-left">
@@ -61,5 +71,7 @@ export default function Header() {
       </div>
 
     </header>
+
+    
   );
 }
