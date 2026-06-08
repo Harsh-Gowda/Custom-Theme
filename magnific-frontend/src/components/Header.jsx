@@ -58,7 +58,7 @@ export default function Header() {
         </div>
 
         <div className="header-right">
-
+     
           <div className="cart">
             🛒 <span>0</span>
           </div>
@@ -66,13 +66,44 @@ export default function Header() {
           <button className="contact-btn">
             Contact
           </button>
+             <button
+  className="mobile-menu-btn"
+  onClick={() => setMenuOpen(true)}
+>
+  ☰
+</button>
 
         </div>
 
       </div>
 
     </header>
+    
 
     
   );
+}
+{
+  menuOpen && (
+
+    <div className="mobile-menu">
+
+      <button
+        className="close-btn"
+        onClick={() => setMenuOpen(false)}
+      >
+        ×
+      </button>
+
+      <a href="#">All Fans</a>
+
+      <a href="#">Lights</a>
+
+      <a href="#">About</a>
+
+      <a href="#">Contact</a>
+
+    </div>
+
+  )
 }
