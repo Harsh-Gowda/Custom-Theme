@@ -8,7 +8,7 @@ function Layout({ children }) {
       </div>
       <main>{children}</main>
     </>
-  );
+  );  
 }
 
 export default Layout;

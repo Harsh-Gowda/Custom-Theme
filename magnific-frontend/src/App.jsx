@@ -7,7 +7,7 @@ function App() {
       <Header />
 
       <section className="hero">
-        <h1>Modern Luxury Lighting</h1>
+        <img src="../assets/led.jpg" alt="Hero Image" />
       </section>
 
       <div style={{ height: "2000px" }}></div>

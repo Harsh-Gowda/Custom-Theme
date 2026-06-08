@@ -5,6 +5,7 @@ export default function Header() {
 
   const [showHeader, setShowHeader] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
 
