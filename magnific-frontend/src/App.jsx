@@ -7,7 +7,7 @@ function App() {
       <Header />
 
       <section className="hero">
-        <img src="../assets/led.jpg" alt="Hero Image" />
+        <img src="../assets/led.jpg"  height="{100px}" width="{100px}" alt="Hero Image" />
       </section>
 
       <div style={{ height: "2000px" }}></div>
