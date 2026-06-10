@@ -86,10 +86,10 @@ body{
 
 .contact-btn{
 
-  background:#ffffff;
+  background:#e6e5e3;
   color:#000000;
 
-  border:1px solid #07c3e0;
+  border:1px solid #737373;
 
   padding:15px 40px;
   border-radius:10px;
@@ -211,7 +211,7 @@ body{
 
   position: absolute;
 
-  top: 30px;
+  
 
   left: 0;
 

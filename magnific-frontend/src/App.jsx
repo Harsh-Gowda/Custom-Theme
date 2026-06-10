@@ -8,10 +8,7 @@ function App() {
 
         <Header />
 
-       
-
         
-
       </section>
     </>
   );
