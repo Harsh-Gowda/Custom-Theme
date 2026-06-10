@@ -39,71 +39,61 @@ export default function Header() {
   }, []);
 
   return (
+    <>
+      <header
+        className={`header
+        ${showHeader ? "show" : "hide"}
+        ${scrolled ? "scrolled" : ""}`}
+      >
+        <div className="header-container">
 
-<header
-  className={`header
-  ${showHeader ? "show" : "hide"}
-  ${scrolled ? "scrolled" : ""}`}
->
-      <div className="header-container">
+          <div className="header-left">
+            <a href="#">All Fans</a>
+            <a href="#">Lights</a>
+            <a href="#">About</a>
+          </div>
 
-        <div className="header-left">
+          <div className="header-logo">
+            Magnific
+          </div>
+
+          <div className="header-right">
+       
+            <div className="cart">
+              🛒 <span>0</span>
+            </div>
+
+            <button className="contact-btn">
+              Contact
+            </button>
+               <button
+        className="mobile-menu-btn"
+        onClick={() => setMenuOpen(true)}
+      >
+        ☰
+      </button>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      {menuOpen && (
+        <div className="mobile-menu">
+          <button
+            className="close-btn"
+            onClick={() => setMenuOpen(false)}
+          >
+            ×
+          </button>
+
           <a href="#">All Fans</a>
           <a href="#">Lights</a>
           <a href="#">About</a>
+          <a href="#">Contact</a>
         </div>
-
-        <div className="header-logo">
-          Magnific
-        </div>
-
-        <div className="header-right">
-     
-          <div className="cart">
-            🛒 <span>0</span>
-          </div>
-
-          <button className="contact-btn">
-            Contact
-          </button>
-             <button
-  className="mobile-menu-btn"
-  onClick={() => setMenuOpen(true)}
->
-  ☰
-</button>
-
-        </div>
-
-      </div>
-
-    </header>
-    
-
-    
+      )}
+    </>
   );
-}
-{
-  menuOpen && (
-
-    <div className="mobile-menu">
-
-      <button
-        className="close-btn"
-        onClick={() => setMenuOpen(false)}
-      >
-        ×
-      </button>
-
-      <a href="#">All Fans</a>
-
-      <a href="#">Lights</a>
-
-      <a href="#">About</a>
-
-      <a href="#">Contact</a>
-
-    </div>
-
-  )
 }
