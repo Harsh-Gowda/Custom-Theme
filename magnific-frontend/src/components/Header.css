@@ -86,16 +86,25 @@ body{
 
 .contact-btn{
 
-  background:#07c3e0;
-  color:#fff;
+  background:#ffffff;
+  color:#000000;
 
-  border:none;
+  border:1px solid #07c3e0;
 
   padding:15px 40px;
   border-radius:10px;
   cursor:pointer;
 
   font-size:14px;
+
+}
+.contact-btn:hover{
+
+  background:#bfdfe4;
+
+  color:#000000;
+
+  border:1px solid #ceedf2;
 }
 .header.show {
   transform: translateY(0);
@@ -197,4 +206,16 @@ body{
     cursor:pointer;
   }
 
+}
+.header {
+
+  position: absolute;
+
+  top: 30px;
+
+  left: 0;
+
+  width: 100%;
+
+  z-index: 100;
 }
