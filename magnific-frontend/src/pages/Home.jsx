@@ -42,24 +42,23 @@ export default function Home() {
          
         </div>
 
+      </section>
+
+
+      <section className="light-product flex flex-row w-full items-center gap-20 mb-20">
+        <div className="light-product-content w-[30%]">
+          <h1>Introducing the Magnific Light</h1>
+          <p className='text-2xl'>Our lights are designed to provide superior airflow while <br></br>adding a touch of elegance to your space.</p>
+        </div>
+        <div className="light-product-image w-[70%]">
+          <img src={led} alt="Magnific Light" className="features-image" />
+        </div>
+      </section>
+
 
         
-     
-      </section>
-         <div className="container-features  px-4 flex flex-col  justify-center">
-              <div className="flex flex-row gap-4 mb-4">
-                <h1>Feature 1</h1>
-              </div>
-              <div className="flex items-center gap-2">
-                <h1>Feature 2</h1>
-                </div>
-              <div className="flex items-center gap-2">
-                <h1>Feature 3</h1>
-              </div>
-                <div className="flex items-center gap-2">
-                <h1>Feature 4</h1>
-              </div>
-        </div>
+
+        
     </>
   );
 }
