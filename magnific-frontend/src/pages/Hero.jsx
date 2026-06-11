@@ -1,9 +1,10 @@
 import "./hero.css";
-import React from "react";
+import React, { useState } from "react";
 import whiteLight from "../assets/white.jpg";
 import pinkLight from "../assets/pink.jpg";
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
@@ -19,13 +20,20 @@ export default function Hero() {
     }
   ];
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   return (
 
     <section className="hero">
 
       <img 
-        src={slides[0].image}
+        src={slides[currentSlide].image}
         className="hero-image"
       />
 
@@ -33,16 +41,23 @@ export default function Hero() {
       <div className="hero-content">
 
         <p>
-          {slides[0].text}
+          {slides[currentSlide].text}
         </p>
 
 
         <a href="#">
-          {slides[0].link}
+          {slides[currentSlide].link}
         </a>
 
 
       </div>
+
+      <button className="hero-arrow hero-arrow-prev" onClick={prevSlide}>
+        ❮
+      </button>
+      <button className="hero-arrow hero-arrow-next" onClick={nextSlide}>
+        ❯
+      </button>
 
 
     </section>
